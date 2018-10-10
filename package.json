@@ -1,0 +1,14 @@
+{
+  "name": "Watson-FaaS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "author": "Libardo Lara",
+  "license": "ALv2",
+  "dependencies": {
+    "npm": "^6.3.0",
+    "@cloudant/cloudant": "2.3.0",
+    "request": "^2.83.0",
+    "watson-developer-cloud": "^3.8.0"
+  }
+}
