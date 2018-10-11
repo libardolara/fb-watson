@@ -1,4 +1,4 @@
-# Serverless simple connector for IBM Watson and Facebook Messenger
+# Simple serverless connector for IBM Watson and Facebook Messenger
 
 The application demonstrate and IBM Cloud Function (based on Apache OpenWhisk) that connects Facebook Messenger with Watson Assitant, Visual Recognition and Watson Discovery saving the chat history in Cloudant database.
 
@@ -48,6 +48,8 @@ After going through this pattern you will understand how to:
 
 Create a [Watson Assistant](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation) instance.
 * Copy the username and password in the Credentials section and paste them in the `params.json` file in the values `wa_username` and `wa_password`
-* If the service has IAM API Key authentication, then copy the API Key in the Credentials section and paste it in the `params.json` file in the value of `wa_api_key`
+* If the service uses IAM API Key authentication, then copy the API Key in the Credentials section and paste it in the `params.json` file in the value of `wa_api_key`
 
+* Click the launch tool button on the serive main page
 
+![](docs/wa_launchtool.png)
