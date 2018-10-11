@@ -39,5 +39,15 @@ After going through this pattern you will understand how to:
 # Prerequisites
 
 * [IBM Cloud Functions CLI](https://console.bluemix.net/openwhisk/learn/cli) to create cloud functions from the terminal. Make sure you do the test action `ibmcloud wsk action invoke /whisk.system/utils/echo -p message hello --result` so that your `~/.wskprops` is pointing to the right account.
-* Install [Node.js](https://nodejs.org/) if you want to deploy the cloud function from the terminal.
+
+* [Whisk Deploy _(wskdeploy)_](https://github.com/apache/incubator-openwhisk-wskdeploy) is a utility to help you describe and deploy any part of the OpenWhisk programming model using a Manifest file written in YAML. You'll use it to deploy all the Cloud Function resources using a single command. You can download it from the [releases page](https://github.com/apache/incubator-openwhisk-wskdeploy/releases) and select the appropriate file for your system.
+
+# Steps
+
+### 1. Create Watson Assistant Service
+
+Create a [Watson Assistant](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation) instance.
+* Copy the username and password in the Credentials section and paste them in the `params.json` file in the values `wa_username` and `wa_password`
+* If the service has IAM API Key authentication, then copy the API Key in the Credentials section and paste it in the `params.json` file in the value of `wa_api_key`
+
 
