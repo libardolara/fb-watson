@@ -58,9 +58,12 @@ Create a [Watson Assistant](https://console.bluemix.net/catalog/services/watson-
 * Copy the username and password in the Credentials section and paste them in the `params.json` file in the values `wa_username` and `wa_password`
 * If the service uses IAM API Key authentication, then copy the API Key in the Credentials section and paste it in the `params.json` file in the value of `wa_api_key`
 * Click the launch tool button on the service main page
+
 ![](docs/wa_launchtool.png)
+
 * Create a new Workspace in your preferred language or import the `sample_workspace.json` 
 * After creating and/or developing the assistant open the service credentials, copy the Workspace ID and paste it in the `params.json` file in the values `wa_workspace_id`
+
 ![](docs/wa_workspaceid.png)
 
 ### 3. Create Watson Visual Recognition Service
@@ -70,19 +73,31 @@ Create a [Watson Visual Recognition](https://console.bluemix.net/catalog/service
 * Click the launch tool button on the service main page
 * If its the first time you use Watson Studio, this will prepare the environment creating a Cloud Object Storage.
 * Click the Create Model button for a custom classifier
+
 ![](docs/vr_create_model.png)
+
 * Give a name to the project
 * Make sure that the Storage and Watson Visual Recognition are set
+
 ![](docs/vr_create_project.png)
+
 * Click the Create button
 * Change the name of the Visual Recognition Model
+
 ![](docs/vr_name.png)
+
 * Upload the `.zip` files with the positive classes and the negative class
+
 ![](docs/vr_upload_images.png)
+
 * Click the 3 button menu and then click the  Add Model only for the positive classes
+
 ![](docs/vr_add_models.png)
+
 * Click the Negative default class
+
 ![](docs/vr_negative_class.png)
+
 * Drag the negative `.zip` into the center of the screen
 * Return to the main page of the model and click the Train Model button
 * When the trainig is done, go to the model detail view.
