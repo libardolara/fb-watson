@@ -1,28 +1,28 @@
-# Simple serverless connector for IBM Watson and Facebook Messenger
+# Conector serverless sencillo para IBM Watson y Facebook Messenger
 
-The application demonstrate and IBM Cloud Function (based on Apache OpenWhisk) that connects Facebook Messenger with Watson Assitant, Visual Recognition and Watson Discovery saving the chat history in Cloudant database.
+Esta aplicación demuestra una funcion en IBM Cloud (basado en Apache OpenWhisk) que conecta Facebook Messenger con Watson Assitant, Visual Recognition y Watson Discovery guardando el historial de la conversación en una base de datos Cloudant.
 
-One function, or action, is invoked through a web endpoint provided by IBM Cloud Functions and called by the Facebook Messenger Webhook. The message is sent to Watson Assistant to interact with a virtual agent, if the message is an image its sent to Watson Visual Recognition.
+Una función, o acción, es invocada atrabves de un web endpoint provisto por IBM Cloud Functions y este es llamado por Facebook Messenger atraves de su Webhook. El mensaje es evnado a Watson Assistant para interacturar con un virtual agent, si el mensage es una imagen es enviado a Watson Visual Recognition.
 
-After going through this pattern you will understand how to:
+Despues de teminar este pattern usted entendera como: 
 
-* Use Watson Assistant
-* Use Watson Visual Recognition
-* Create and Deploy Cloud Functions
+* Usar Watson Assistant
+* Usar Watson Visual Recognition
+* Crear y Desplegar Cloud Functions
 
 ![](docs/architecture.png)
 
-## Flow
+## Flujo
 
-1. User interacts with Facebook Messenger
-2. Facebook Messenger sends the payload to IBM Cloud Functions
-3. The function (or action) looks up for a past chat history on Cloudant Database.
-4. The function sends the text message to Watson Assistant.
-5. If need the function will send an attached image to Watson Visual Recognition.
-5. If need the function will fallback to Watson Discovery to find the answer for the user
-6. The function saves the chat history to Cloudant Database.
-7. The function sends the answer to Facebook Messenger.
-8. The user gets the answer to his interaction.
+1. El usuario interactua con Facebook Messenger
+2. Facebook Messenger envia al payload a IBM Cloud Functions
+3. La función (o acción) busca por un historial de chat en la base de datos Cloudant.
+4. La función envia el mensaje de texto a Watson Assistant.
+5. Si es necesario la función enviaria una imagen adjunto a Watson Visual Recognition.
+5. Si es necesario la funcion buscará en Watson Discovery la respuesta para el usuario.
+6. La función guarda el historial del chat en la base de datos Cloudant.
+7. La función envia la respuesta a Facebook Messenger.
+8. El usuario obtiene la respuesta para su interacción.
 
 ## Included components
 
