@@ -1,0 +1,22 @@
+---
+packages:
+  default:
+    actions:
+      # Action named "fb-watson"
+      # Creating action as a regular Node.js action
+      fb-watson:
+        function: main.js
+        runtime: nodejs:8
+        inputs:
+          wa_username:
+          wa_password:
+          wa_workspace_id:
+          cloudant_url:
+          fb_verification_token:
+          fb_page_access_token:
+          vr_api_key:
+          vr_model_id:
+          wds_username:
+          wds_password:
+          wds_enviroment:
+          wds_collection_reviews:
