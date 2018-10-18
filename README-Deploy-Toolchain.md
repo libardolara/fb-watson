@@ -1,6 +1,6 @@
 # Instrucciones para el Despliegue con el Toolchain
 
-Para desplegar esta función puedes usar el toolchain haciendo click en el boton [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)]
+Para desplegar esta función puedes usar el toolchain haciendo click en el boton [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://console.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/libardolara/fb-watson-toolchain)
 
 # Paso a Paso
 
@@ -59,3 +59,5 @@ Para desplegar esta función puedes usar el toolchain haciendo click en el boton
 7. Has click en el nodo Delivery Pipeline
 8. Asegurate de que haya corrido el nodo BUILD que despliega tu funcion en IBM Cloud
 9. Para revisar tu funcion puedes ir a https://console.bluemix.net/openwhisk/actions
+
+![](docs/tc_pipeline_run.png)
