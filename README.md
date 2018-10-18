@@ -1,5 +1,5 @@
 # Conector serverless sencillo para IBM Watson y Facebook Messenger
-> For english instructions click [![Readme EN](docs/en.png)](README_EN.md)
+> For english instructions click [English](README_EN.md)
 
 Esta aplicación demuestra una funcion en IBM Cloud (basado en Apache OpenWhisk) que conecta Facebook Messenger con Watson Assitant, Visual Recognition y Watson Discovery guardando el historial de la conversación en una base de datos Cloudant.
 
