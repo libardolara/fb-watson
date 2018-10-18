@@ -124,13 +124,13 @@ Crea el servicio [**Cloudant**](https://console.bluemix.net/catalog/services/clo
 ### 6. Desplegar a Cloud Functions
 > Escoge un metodo de despliegue
 
-## Desplegar a través de DevOps Toolchain
+#### Desplegar a través de DevOps Toolchain
 
 Haz click en el boton [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://console.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/libardolara/fb-watson-toolchain) y sigue las [instrucciones para desplegar usando el toolchain](README-Deploy-Toolchain.md).
 
 Tambien puedes desplegar directamente desde el CLI siguiendo los pasos de la siguiente sección.
 
-## Desplegar usando `wskdeploy` 
+#### Desplegar usando `wskdeploy` 
 
 Este metodo despliega a Cloud Functions con un comando usando el archivo manifest que especifica el ambiente de despliegue.
 
