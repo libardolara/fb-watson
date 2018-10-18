@@ -39,7 +39,7 @@ Despues de teminar este pattern usted entendera como:
 
 # Prerequisitos
 
-* [IBM Cloud Functions CLI](https://console.bluemix.net/openwhisk/learn/cli) para crear cloud functions desde la terminal. Has una prueba de una acción `ibmcloud wsk action invoke /whisk.system/utils/echo -p message hello --result` para que tu `~/.wskprops` apunte a la cuenta correcta.
+* [IBM Cloud Functions CLI](https://console.bluemix.net/openwhisk/learn/cli) para crear cloud functions desde la terminal. Haz una prueba de una acción `ibmcloud wsk action invoke /whisk.system/utils/echo -p message hello --result` para que tu `~/.wskprops` apunte a la cuenta correcta.
 
 * [Whisk Deploy _(wskdeploy)_](https://github.com/apache/incubator-openwhisk-wskdeploy) es una herramienta que ayuda a describir y desplegar cualquier componente de OpenWhisk usando un archivo Manifest escirto en YAML. Lo usuaras si deseas hacer el despliege despliegue de todos los recursos de Cloud Functions en una sola linea de comandos. Puedes descargar en [releases page](https://github.com/apache/incubator-openwhisk-wskdeploy/releases) y seleccionar el archivo correcto para tu sistema operativo.
 
