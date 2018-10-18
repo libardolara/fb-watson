@@ -110,7 +110,18 @@ Crea un servicio de [Watson Visual Recognition](https://console.bluemix.net/cata
 Crea el servicio [**Cloudant**](https://console.bluemix.net/catalog/services/cloudant) escogiendo `Use both legacy credentials and IAM` para la opción _Available authentication method_.
 * Crea las credenciales para esta instancia y copia la **url** en el archivo `params.json` en el valor `cloudant_url`
 
-### 5. Desplegar a Cloud Functions
+### 5. Configurar Facebook Messenger
+
+* Crea un Fan Page en [Facebook](https://www.facebook.com/) como un Negocio o Local
+* Usa un nombre unico y facil de buscara para tu Fan Page
+* Crea una cuenta en [Facebook Developers](https://developers.facebook.com/)
+* Agrega una aplicación
+* Agrega a la aplicación el producto **Messenger** haciendo click en Configurar
+* Una vez configurada ve a la sección **Generación de token** y selecciona el Fan Page (o Pagina) creada.
+* Copia el Token de acceso a la pagina que Facebook te entrega en el archivo `params.json` en el valor `fb_page_access_token`
+* En el archivo `params.json` en el valor `fb_verification_token` define una contraseña propia para tu aplicación.
+
+### 6. Desplegar a Cloud Functions
 > Escoge un metodo de despliegue
 
 ## Desplegar a través de DevOps Toolchain
@@ -130,4 +141,13 @@ $ wskdeploy
 ```
 
 > Si quieres deshacer el despliegue puedes usar `wskdeploy undeploy`
+
+### 7. Configurar el Webhook de Facebook Messenger
+
+* Copia el Endpoint publico de la función desplegada en IBM Cloud
+* En el sitio de la aplicación de Facebook Messenger ve a la sección **Webhooks**
+* Haz click en **Configurar Webhook**
+* En el panel desplegable, pega el Endpoint de tu función. Modifica la extención de la url de `.json` a `.text`
+* En el campo _Verificar Token_ ingresa la contraseña que definiste en el valor de `fb_verification_token` del archivo `params.json`
+* En los Campos de Suscripción selecciona la opción **messages**
 
