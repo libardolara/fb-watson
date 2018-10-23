@@ -1,0 +1,1 @@
+Imagen dectectada: <? $images.images.![classifiers.![classes.![class].join(', ')].join(', ')].join(', ')  ?>

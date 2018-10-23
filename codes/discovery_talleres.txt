@@ -1,0 +1,12 @@
+
+{
+  "output": {
+    "text": {
+      "values": [
+        "Perfecto, estos son los mejores talleres:"
+      ],
+      "selection_policy": "sequential"
+    },
+    "action": "wds_opiniones"
+  }
+}
