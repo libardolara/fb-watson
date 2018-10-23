@@ -61,9 +61,6 @@ Crea un servicio de [Watson Assistant](https://console.bluemix.net/catalog/servi
 * Copia el username y password en las Credenciales y pegalos en el archivo `params.json` en los valores `wa_username` y `wa_password`
 * Si el serivicio usa autenticación IAM API Key, entonces copia el API Key en las Credencials the Credentials y pegala en el archivo `params.json` en el valor `wa_api_key`
 * Haz click en el boton *Lanzar Herramienta* en la pagina principal del servicio.
-
-![](docs/wa_launchtool.png)
-
 * Crea un nuevo workspace en el lenguaje preferido o importa el ejemplo en español `sample_workspace.json` 
 * Despues de crear y/o desarrollar el asistente, abre las credenciales de servicios, copia el Workspace ID y pegalas en el archivo `params.json` en el valor `wa_workspace_id`
 
@@ -75,10 +72,7 @@ Crea un servicio de [Watson Visual Recognition](https://console.bluemix.net/cata
 * Copia el API Key en las Credenciales y pegala en el archivo `params.json` en el valor `vr_api_key`
 * Haz click en el boton *Lanzar Herramienta* en la pagina principal del servicio.
 * Si es laprimera vez que usas Watson Studio, esto preparará el ambiente de trabajo creando un Cloud Object Storage.
-* Haz click en el boton Create Model para un custom classifier
-
-![](docs/vr_create_model.png)
-
+* Haz click en el boton _Create Model_ para un custom classifier
 * Dele un nombre al proyecto.
 * Asegurate que el Storage y Watson Visual Recognition esten configurados.
 
