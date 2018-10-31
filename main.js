@@ -16,7 +16,7 @@
 
 'use strict';
 
-const ConversationV1 = require('watson-developer-cloud/conversation/v1');
+const AssistantV1 = require('watson-developer-cloud/assistant/v1');
 const DiscoveryV1 = require('watson-developer-cloud/discovery/v1');
 const VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3');
 const cloudant = require('@cloudant/cloudant');
@@ -30,7 +30,7 @@ function errorResponse(reason) {
 }
 
 // Using some globals for now
-let conversation;
+let assistant;
 let db;
 let cloudantClient
 let context;
@@ -46,12 +46,22 @@ let deleteContext = false;
  */
 function initClients(args) {
   // Connect a client to Watson Assistant
-  conversation = new ConversationV1({
-    username: args.wa_username,
-    password: args.wa_password,
-    version_date: ConversationV1.VERSION_DATE_2017_04_21
-  });
-  console.log('Connected to Watson Conversation');
+  if ( args.wa_api_key && args.wa_api_key !== "") {
+    assistant = new AssistantV1({
+      version: '2018-09-20',
+      iam_apikey: args.wa_api_key,
+      url: 'https://gateway.watsonplatform.net/assistant/api'
+    });
+  } else {
+    assistant = new AssistantV1({
+      version: '2018-09-20',
+      username: args.wa_username,
+      password: args.wa_password,
+      url: 'https://gateway.watsonplatform.net/assistant/api'
+    });
+  }
+
+  console.log('Connected to Watson Assistant');
 
   // Connect a client to Cloudant
   if (args.cloudant_url) {
@@ -71,21 +81,6 @@ function initClients(args) {
     });
 
   });
-
-
-/*
-  var go = true;
-  while (go) {
-    try {
-      db = cloudantClient.use(dbName);
-      go = false;
-    } catch (e) {
-
-    }
-  }
-
-  console.log('Connected to Cloudant');
-  */
 }
 
 
@@ -177,13 +172,13 @@ function callVisualRecognition(params){
  *
  *  @return - Respuesta del Watson Assistant
  */
-function conversationMessage(request, workspaceId) {
+function assistantMessage(request, workspaceId) {
   return new Promise(function(resolve, reject) {
     const input = request ? request : '';
     console.log('WORKSPACE_ID: ' + workspaceId);
     console.log('Input text: ' + input);
 
-    conversation.message(
+    assistant.message(
       {
         input: { text: input },
         workspace_id: workspaceId,
@@ -567,7 +562,7 @@ function main(args) {
           initClients(args)
           .then(a_db => getSessionContext(a_db, sessionId))
           .then(()=>callVisualRecognition(args))
-          .then(request => conversationMessage(request, args.wa_workspace_id))
+          .then(request => assistantMessage(request, args.wa_workspace_id))
           .then(watsonResponse => actionHandler(args, watsonResponse))
           .then(actionResponse => postFacebook(actionResponse, args, postUrl, args.fb_page_access_token))
           .then(() => saveSessionContext(sessionId))
