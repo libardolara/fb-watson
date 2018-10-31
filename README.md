@@ -58,8 +58,10 @@ $ git clone https://github.com/libardolara/fb-watson
 ### 2. Crear el servicio Watson Assistant
 
 Crea un servicio de [Watson Assistant](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation).
-* Copia el username y password en las Credenciales y pégalos en el archivo `params.json` en los valores `wa_username` y `wa_password`
-* Si el servicio usa autenticación IAM API Key, entonces copia el API Key en las Credencials the Credentials y pégala en el archivo `params.json` en el valor `wa_api_key`
+* Copia el API Key en las Credencials the Credentials y pégala en el archivo `params.json` en el valor `wa_api_key`
+
+> Si el servicio es antiguo y aun usa _Basic Authentication_, copia el username y password en las Credenciales y pégalos en el archivo `params.json` en los valores `wa_username` y `wa_password`
+
 * Haz click en el botón **Lanzar Herramienta** en la página principal del servicio.
 * Crea un nuevo workspace en el lenguaje preferido o importa el ejemplo en español [sample_workspace.json](sample_workspace.json) 
 * Después de crear y/o desarrollar el asistente, abre las credenciales de servicios, copia el Workspace ID y pégalas en el archivo `params.json` en el valor `wa_workspace_id`
