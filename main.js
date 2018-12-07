@@ -36,7 +36,7 @@ let cloudantClient
 let context;
 let dbName = 'watson';
 let doc;
-let deleteContext = false;
+let deleteContext;
 
 /**
  *  Inicializa las principales variables para que se ejecute la aplicación
@@ -319,9 +319,9 @@ function postFacebook(response, params, postUrl, accessToken) {
  *
  *  @return - Status del request al POST API
  */
-function sendResponse(resolve) {
+function sendResponse(resolve, msg_s) {
   console.log('Begin sendResponse');
-
+  console.log(msg_s)
   // Everytime facebook pings the "receive" endpoint/webhook, it expects a
   // "200" string/text response in return. In Cloud Functions, if we'd want to return
   // a string response, then it's necessary that we add a field "text" and the
@@ -406,8 +406,8 @@ function getSessionContext(a_db, sessionId) {
  */
 function saveSessionContext(sessionId) {
   console.log('Begin saveSessionContext');
-  console.log(sessionId);
-  console.log(deleteContext);
+  console.log('Session ID: ' + sessionId);
+  console.log('Delete Context: ' + deleteContext);
 
   return new Promise(function(resolve, reject) {
 
@@ -539,7 +539,7 @@ function isPageObject(params) {
 function main(args) {
   console.log('Begin action');
   //console.log(args);
-
+  deleteContext = false;
   return new Promise(function(resolve, reject) {
 
     try {
@@ -558,7 +558,7 @@ function main(args) {
           const sessionId = args.entry[0].messaging[0].sender.id;
           const postUrl = 'https://graph.facebook.com/v2.6/me/messages';
 
-
+        
           initClients(args)
           .then(a_db => getSessionContext(a_db, sessionId))
           .then(()=>callVisualRecognition(args))
@@ -566,7 +566,7 @@ function main(args) {
           .then(watsonResponse => actionHandler(args, watsonResponse))
           .then(actionResponse => postFacebook(actionResponse, args, postUrl, args.fb_page_access_token))
           .then(() => saveSessionContext(sessionId))
-          .then(() => sendResponse( resolve))
+          .then((msg_s) => sendResponse( resolve, msg_s))
           .catch(err => { reject(errorResponse(err)) })
 
       } else {
