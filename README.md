@@ -29,10 +29,10 @@ Después de terminar este pattern usted entenderá como:
 
 ## Componentes Incluidos
 
-* [Cloudant](https://console.ng.bluemix.net/catalog/services/cloudant-nosql-db): Una base de datos completamente manejada diseñada para aplicaciones web y mobile modernas que usan documentos como JSON.
+* [Cloudant](https://cloud.ibm.com/catalog/services/cloudant): Una base de datos completamente manejada diseñada para aplicaciones web y mobile modernas que usan documentos como JSON.
 * [Watson Visual Recognition](https://www.ibm.com/watson/developercloud/visual-recognition): Visual Recognition usa algoritmos de deep learning para identificar escenas, objetos y rostros en una imagen. Puede crear y entrenar clasificadores customizados para identificar patrones para tus necesidades.
 * [Watson Assistant](https://www.ibm.com/watson/developercloud/assistant): Watson Assistant service combina machine learning, natural language understanding e integra herramientas de dialogo para crear flujos conversacionales entre los usuarios y las aplicaciones.
-* [IBM Cloud Functions](https://console.ng.bluemix.net/openwhisk) (basado en Apache OpenWhisk): Ejecuta código bajo demanda en un ambiente serverless y altamente escalable.
+* [IBM Cloud Functions](https://cloud.ibm.com/openwhisk) (basado en Apache OpenWhisk): Ejecuta código bajo demanda en un ambiente serverless y altamente escalable.
 
 ## Tecnologías Importantes
 
@@ -41,7 +41,7 @@ Después de terminar este pattern usted entenderá como:
 
 # Prerrequisitos
 
-* [IBM Cloud Functions CLI](https://console.bluemix.net/openwhisk/learn/cli) para crear cloud functions desde la terminal. Haz una prueba de una acción `ibmcloud wsk action invoke /whisk.system/utils/echo -p message hello --result` para que tu `~/.wskprops` apunte a la cuenta correcta.
+* [IBM Cloud Functions CLI](https://cloud.ibm.com/openwhisk/learn/cli) para crear cloud functions desde la terminal. Haz una prueba de una acción `ibmcloud wsk action invoke /whisk.system/utils/echo -p message hello --result` para que tu `~/.wskprops` apunte a la cuenta correcta.
 
 * [Whisk Deploy _(wskdeploy)_](https://github.com/apache/incubator-openwhisk-wskdeploy) es una herramienta que ayuda a describir y desplegar cualquier componente de OpenWhisk usando un archivo Manifest escrito en YAML. Lo usuarás si deseas hacer el despliegue de todos los recursos de Cloud Functions en una sola línea de comandos. Puedes descargar en [releases page](https://github.com/apache/incubator-openwhisk-wskdeploy/releases) y seleccionar el archivo correcto para tu sistema operativo.
 
@@ -57,7 +57,7 @@ $ git clone https://github.com/libardolara/fb-watson
 
 ### 2. Crear el servicio Watson Assistant
 
-Crea un servicio de [Watson Assistant](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation).
+Crea un servicio de [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant).
 * Copia el API Key en las Credencials the Credentials y pégala en el archivo `params.json` en el valor `wa_api_key`
 
 > Si el servicio es antiguo y aun usa _Basic Authentication_, copia el username y password en las Credenciales y pégalos en el archivo `params.json` en los valores `wa_username` y `wa_password`
@@ -70,7 +70,7 @@ Crea un servicio de [Watson Assistant](https://console.bluemix.net/catalog/servi
 
 ### 3. Crear el servicio Watson Visual Recognition
 
-Crea un servicio de [Watson Visual Recognition](https://console.bluemix.net/catalog/services/visual-recognition).
+Crea un servicio de [Watson Visual Recognition](https://cloud.ibm.com/catalog/services/visual-recognition).
 * Copia el API Key en las Credenciales y pégala en el archivo `params.json` en el valor `vr_api_key`
 * Haz click en el botón **Lanzar Herramienta** en la página principal del servicio.
 * Si es la primera vez que usas Watson Studio, esto preparará el ambiente de trabajo creando un Cloud Object Storage.
@@ -105,7 +105,7 @@ Crea un servicio de [Watson Visual Recognition](https://console.bluemix.net/cata
 
 ### 4. Crear el servicio Cloudant Database
 
-Crea el servicio [**Cloudant**](https://console.bluemix.net/catalog/services/cloudant) escogiendo `Use both legacy credentials and IAM` para la opción _Available authentication method_.
+Crea el servicio [**Cloudant**](https://cloud.ibm.com/catalog/services/cloudant) escogiendo `Use both legacy credentials and IAM` para la opción _Available authentication method_.
 * Crea las credenciales para esta instancia y copia la **url** en el archivo `params.json` en el valor `cloudant_url`
 
 ### 5. Configurar Facebook Messenger
