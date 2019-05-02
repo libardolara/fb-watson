@@ -124,7 +124,7 @@ Crea el servicio [**Cloudant**](https://cloud.ibm.com/catalog/services/cloudant)
 
 #### Desplegar a través de DevOps Toolchain
 
-Haz click en el siguinte botón [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://console.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/libardolara/fb-watson-toolchain) y sigue las [instrucciones para desplegar usando el toolchain](README-Deploy-Toolchain.md).
+Haz click en el siguinte botón [![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https%3A//github.com/libardolara/fb-watson-toolchain) y sigue las [instrucciones para desplegar usando el toolchain](README-Deploy-Toolchain.md).
 
 También puedes desplegar directamente desde el CLI siguiendo los pasos de la siguiente sección.
 
