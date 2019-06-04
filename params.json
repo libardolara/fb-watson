@@ -1,6 +1,7 @@
 {
 "wa_username": "",
 "wa_password": "",
+"wa_api_key": "",
 "wa_workspace_id": "",
 "cloudant_url": "",
 "fb_verification_token": "",
