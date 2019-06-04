@@ -39,13 +39,13 @@ Después de terminar este pattern usted entenderá como:
 * [Watson](https://www.ibm.com/watson/developer/): Watson en IBM Cloud permite integrar herramientas de AI en tu aplicación y guardar, entrenar y manejar tu data en una nube segura.
 * [Serverless](https://www.ibm.com/cloud-computing/bluemix/openwhisk): Una plataforma basada en eventos que permite ejecutar código como respuesta a un evento.
 
-# Prerrequisitos
+## Prerrequisitos
 
 * [IBM Cloud Functions CLI](https://cloud.ibm.com/openwhisk/learn/cli) para crear cloud functions desde la terminal. Haz una prueba de una acción `ibmcloud wsk action invoke /whisk.system/utils/echo -p message hello --result` para que tu `~/.wskprops` apunte a la cuenta correcta.
 
 * [Whisk Deploy _(wskdeploy)_](https://github.com/apache/incubator-openwhisk-wskdeploy) es una herramienta que ayuda a describir y desplegar cualquier componente de OpenWhisk usando un archivo Manifest escrito en YAML. Lo usuarás si deseas hacer el despliegue de todos los recursos de Cloud Functions en una sola línea de comandos. Puedes descargar en [releases page](https://github.com/apache/incubator-openwhisk-wskdeploy/releases) y seleccionar el archivo correcto para tu sistema operativo.
 
-# Paso a Paso
+## Paso a Paso
 
 ### 1. Clonar el repo
 
