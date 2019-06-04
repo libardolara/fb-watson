@@ -63,7 +63,10 @@ Crea un servicio de [Watson Assistant](https://cloud.ibm.com/catalog/services/wa
 > Si el servicio es antiguo y aun usa _Basic Authentication_, copia el username y password en las Credenciales y pégalos en el archivo `params.json` en los valores `wa_username` y `wa_password`
 
 * Haz click en el botón **Lanzar Herramienta** en la página principal del servicio.
-* Crea un nuevo workspace en el lenguaje preferido o importa el ejemplo en español [sample_workspace.json](sample_workspace.json) 
+* Crea un nuevo Skill en el lenguaje preferido o importa el ejemplo en español [sample_workspace.json](sample_workspace.json) 
+
+> Para instrucciones detalladas en como crear un asistente virtual sigue [El Instructivo para crear Skills](README_Skills.md)
+
 * Después de crear y/o desarrollar el asistente, abre las credenciales de servicios, copia el Workspace ID y pégalas en el archivo `params.json` en el valor `wa_workspace_id`
 
 ![](docs/wa_workspaceid.png)
