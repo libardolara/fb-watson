@@ -37,3 +37,8 @@ Sufrí un accidente y requiero asistencia para el arreglo
 Quiero presentar la solicitud de reparación de mi carro
 Le pegue a mi carro, ¿Como puedo solicitar el arreglo?
 ```
+
+> Estos ejemplos seran usados por Watson Assistant para crear un sistema de classificacion basado en la gramatica y linguistica de los ejemplos. Es importante comentar que los errores de ortografia podrian ser entendidos pero no es una garantia completa, si la palabra cambia drasticamente es buena idea agregar una oración de ejemplo usandola.
+
+* Cuando tengas mas de 10 ejemplos haz click en la flecha hacia la izquierda, que se encuentra en la esquina superior izquierda
+* Agrega una intencion para Expresar Aceptar o Asentir y una para Negar o Cancelar.
