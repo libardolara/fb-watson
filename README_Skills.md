@@ -94,6 +94,11 @@ Las entidades son como los sustantivos o palabras clave. Trabajan para identific
 
 #### 3.3. Entities del Sistema
 
+* Ahora vamos a usar una entidad del sistema. Vuelve a la pestaña de entidades (haciendo click en la flecha que queda en la esquina superior izquierda)
+* Haz click en la pestaña **System entities**
+* Observa las diferentes entidades del sistema, entre ellas encontraras moneda, fecha, numeros, porcentaje y tiempo.
+* Haz click en el botón
+
 > Para mayor información puedes revisar la [Documentación de Entidades](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-create-dictionary-based)
 
 
