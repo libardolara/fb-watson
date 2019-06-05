@@ -75,11 +75,29 @@ me arrepenti
 
 Las entidades son como los sustantivos o palabras clave. Trabajan para identificar la naturaleza específica de la solicitud de un cliente. Al construir los términos de tu negocio en entidades, tu asistente puede proporcionar respuestas dirigidas a una variedad más amplia de consultas.
 
+#### 3.1. Entities basadas en Sinónimos
+
 * Haz click en la pestaña **Entities**
 * Haz click en el botón **Create entity**
 * El nombre de la primera entidad sera `Marca`
 * Despues de ingresar el nombre de la entidad, haz click en el botón **Create entity**
 * Agrega marcas de carros, tales como Toyota, Mazda, Audi, BMW, etc. como valores. Si es necesario puedes ingresar ejemplos de sinonimos con los cuales los usuarios se pueden referir a una marca.
 
+#### 3.2. Entities basadas en Patrones
+
 * Ahora vamos a crear una entidad utilizando un patron linguistico. Vuelve a la pestaña de entidades (haciendo click en la flecha que queda en la esquina superior izquierda)
+* Haz click en el botón **Create entity**
+* El nombre de la primera entidad sera `Placa`
+* Agrega un valor llamado `Carro`
+* Cambia la opción **Synonyms** por **Patterns**
+* En el campo Patterns ingresa el patrón `\b[a-zA-Z]{3}.?\d{3}\b` y haz click en el botón **Add value**
+
+#### 3.3. Entities del Sistema
+
+> Para mayor información puedes revisar la [Documentación de Entidades](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-create-dictionary-based)
+
+
+
+
+
 
