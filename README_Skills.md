@@ -97,7 +97,7 @@ Las entidades son como los sustantivos o palabras clave. Trabajan para identific
 * Ahora vamos a usar una entidad del sistema. Vuelve a la pestaña de entidades (haciendo click en la flecha que queda en la esquina superior izquierda)
 * Haz click en la pestaña **System entities**
 * Observa las diferentes entidades del sistema, entre ellas encontraras moneda, fecha, numeros, porcentaje y tiempo.
-* Haz click en el botón **Off** para cambiar a **On** el uso de la entidad **sys-date**
+* Haz click para activar el uso de la entidad **sys-date**
 
 > Para mayor información puedes revisar la [Documentación de Entidades](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-create-dictionary-based)
 
@@ -138,7 +138,7 @@ Si un nodo posee un flujo conversacional adicional, lo que conocemos como nodos 
 * En las variantes de respuesta selecciona la opción **Random** para que el asistente seleccione de forma aleatorea una de las diferentes respuestas que le especificaste. Para mayor información revisa la [documentación de las variantes a una respuesta](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-add-variety)
 * Repite este proceso para agregar nodos para las intenciones de despededida (General_Ending), chistes (General_Jokes) y capacidades del asistente (General_Agent_Capabilities)
 
-#### 4.2. Slots
+#### 4.2. Adquiriendo información a través de Slots
 
 Los slots te permiten recopilar la información que tu asistente virtual necesita para responder a un usuario dentro de un solo nodo. Un slot puede ser traducido como un espacio en blanco, que tu asistente necesita llenar como información vital para ese nodo.
 
@@ -148,8 +148,51 @@ Los slots te permiten recopilar la información que tu asistente virtual necesit
 * Observa que ahora el nodo tiene un panel adicional para espeficar la información requerida.
 * En el campo **Check for** especifica la entidad **@Marca**, en el campo **If not present ask** escribe que quisieras que el asistente responda si no encuentra la entidad, por ejemplo `¿Cuál es la marca del carro?`
 * Observa que la entidad detectada sera guardada en una variable de contexto identificada com **$**. Estas variables nos siven como la memoria del asistente y pueden ser usadas en cualquier parte del nodo, ya sea como condicón o respuesta.
-* Repite este proceso para la entidad **@sys-date** haciendo click en el enlace **Add slot**
-* Para a entidad de placa especifica **@Placa.literal** en el campo **Check for**
+* Repite este proceso para la entidad **@sys-date** preguntando `¿Cuando ocurrio el incidente?`. Para esto primero haz click en el enlace **Add slot**.
+* Para a entidad de placa especifica **@Placa.literal** en el campo **Check for** y en el campo **If not present ask**  la pregunta `¿Cuál es la placa del carro?
 
+> la instrucción **.literal** indica que se desea guardar la palabra que el usuario escribio mas no su clasificación de la entidad. Si no lo usaramos para la placa obtendriamos el valor _Carro_ ya que entenderia que es una placa de carro.
+
+* En la respuesta del nodo podremos usar las variables de contexto de la siguiente forma: `Tu reclamación describe que sufriste un accidente el dia $date sobre el carro $Marca y placa $Placa, ¿deseas presentar la reclamacón en este momento?`
+* Utiliza el panel de pruebas para probar esta funcionalidad, escribele una oración como `quiero que me ayudes para que arreglen mi carro` y sigue el flujo de la conversación
 
 > Para mayor información revisa la [documentación de recopilación de informacion con Slots](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-slots)
+
+#### 4.3. Conversaciones que divagan
+
+Digressions permiten que el flujo de diálogo sea dirigido por el usuario. Tu determinas qué tan flexible puede ser el flujo por nodo de diálogo, desde solo proporcionar una respuesta rápida a una pregunta fuera de tema hasta temas totalmente cambiantes en medio de una discusión.
+
+* En el nodo **Presentar Reclamación** haz click en el botón **Customize**
+* Haz click en la pestaña **Digressions** del panel emergente
+* Haz click en la opción **Digressions can go away from this node* 
+* Activa la opción para el nodo pueda divagar mientras esta llenando la información de los Slots.
+* Como nuestro nodo de Presentar Reclamación es tal vez el mas importante de nuestro asistente virtual, vamos a garantizar que complete el proceso. Para esto vamos a seleccionar la opción **Only digress from slots to nodes that allow returns**
+* Haz click en el botón **Apply**
+
+#### 4.4. Multiples Respuestas
+
+Habilita un nodo con varias respuestas para que tu asistente virtual pueda proporcionar respuestas diferentes a la misma entrada, en función de otras condiciones.
+
+* En el nodo **Presentar Reclamación** haz click en el botón **Customize**
+* En el panel emergente, haz click para acticar **Multiple responses**
+* Observa como el panel de respuestas ha cambiado. Ahora tiene una condición y una respuesta que se puede configurar con las opciones normales del asistente.
+* Agrega una respuesta haciendo click en el botón **Add response**
+* En la condición de la respuesta, selecciona la entidad **Marca** y que sea el valor **Audi**.
+* Como respuesta especificaremos que `Los Audis deben acercarse a cualquier taller autorizado con la poliza de seguro y son aceptados inmediatamente`
+* El asistente virtual evalua las condiciones dentro del nodo en orden, de arriba hacia abajo. Como la primera respuesta que tenemos no tiene condición espeficica siempre se evalua como verdadera, por lo cual debemos cambiarlas de lugar.
+* Sobre la ultima respuesta, haz click en la flecha hacia arriba **^** que se encuentra en el numero de la respuesta.
+* Prueba esta nueva respuesta en el panel de pruebas
+
+> Para mayor información revisa la [documentación de multiples respuestas](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple)
+
+#### 4.5. Nodos Hijos
+
+Continuaremos el desarrollo de nuestro arból conversacional, con los diferentes flujos de interacciones dentro de nuestro asistente virtual.
+
+* En el nodo **Presentar Reclamacion** haz click sobre el botón de los 3 puntos y haz click sobre la opción **Add child node**
+* Este nuevo nodo hijo será para la opcion en que el usuario acepta enviar la reclamación en este momento.
+
+
+
+
+
