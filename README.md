@@ -65,9 +65,11 @@ Crea un servicio de [Watson Assistant](https://cloud.ibm.com/catalog/services/wa
 * Haz click en el botón **Lanzar Herramienta** en la página principal del servicio.
 * Crea un nuevo Skill en el lenguaje preferido o importa el ejemplo en español [sample_workspace.json](sample_workspace.json) 
 
-> Para instrucciones detalladas en como crear un asistente virtual sigue [El Instructivo para crear Skills](README_Skills.md)
+> Para instrucciones detalladas en como desarrollar un asistente virtual sigue [El Instructivo para crear Skills](README_Skills.md)
 
-* Después de crear y/o desarrollar el asistente, abre las credenciales de servicios, copia el Workspace ID y pégalas en el archivo `params.json` en el valor `wa_workspace_id`
+* Después de importar y/o desarrollar el asistente, abre los detalles **View API Details** del Skill, copia el **Workspace ID** y pégala en el archivo `params.json` en el valor `wa_workspace_id`
+
+![](docs/wa_api_detail.png)
 
 ![](docs/wa_workspaceid.png)
 
@@ -75,36 +77,8 @@ Crea un servicio de [Watson Assistant](https://cloud.ibm.com/catalog/services/wa
 
 Crea un servicio de [Watson Visual Recognition](https://cloud.ibm.com/catalog/services/visual-recognition).
 * Copia el API Key en las Credenciales y pégala en el archivo `params.json` en el valor `vr_api_key`
-* Haz click en el botón **Lanzar Herramienta** en la página principal del servicio.
-* Si es la primera vez que usas Watson Studio, esto preparará el ambiente de trabajo creando un Cloud Object Storage.
-* Haz click en el botón _Create Model_ para un custom classifier
-* Dele un nombre al proyecto.
-* Asegúrate que el Storage y Watson Visual Recognition estén configurados.
 
-![](docs/vr_create_project.png)
-
-* Haz click en el botón _Create_
-* Cambia el nombre del modelo de Visual Recognition
-
-![](docs/vr_name.png)
-
-* Sube los archivos `.zip` con las clases positivas y las clases negativas.
-
-![](docs/vr_upload_images.png)
-
-* Haz click en el menú con los 3 puntos y después selecciona la opción Add Model solamente con las clases positivas.
-
-![](docs/vr_add_models.png)
-
-* Haz click en la clase del sistema Negative
-
-![](docs/vr_negative_class.png)
-
-* Arrastra el `.zip` con las imágenes negativas al centro de la pantalla
-* Retorna a la página principal del modelo y haz click en el botón Train Model
-* Cuando el entrenamiento termine, ve a los detalles del modelo.
-* Copia el Model ID y pégalo en el archivo `params.json` en el valor `vr_model_id`
-* Puedes probar el modelo en la pestaña Test, arrastrando una nueva imagen para clasificar
+> Sigue las instrucciones detalladas de como entrenar un modelo de clasificación en [El Instructivo para Custom Models](README_CM.md)
 
 ### 4. Crear el servicio Cloudant Database
 
