@@ -112,6 +112,7 @@ Vamos a hacer uso del panel de prueba. Este panel te permite probar el entendimi
 * Escribe la palabra `Masda`
 * Observa que la entidad identificada es deplegada en azul claro, con un **@**
 * Realiza las pruebas suficientes para la identificación de intenciones y entidades.
+* Siempre que termines o vayas a hacer una nueva prueba es recomendable hacer click en el enlace **Clear** en el panel de pruebas.
 
 
 ### 4. Construir el Dialogo
@@ -164,12 +165,20 @@ Digressions permiten que el flujo de diálogo sea dirigido por el usuario. Tu de
 
 * En el nodo **Presentar Reclamación** haz click en el botón **Customize**
 * Haz click en la pestaña **Digressions** del panel emergente
-* Haz click en la opción **Digressions can go away from this node* 
+* Haz click en la opción **Digressions can go away from this node** 
 * Activa la opción para el nodo pueda divagar mientras esta llenando la información de los Slots.
 * Como nuestro nodo de Presentar Reclamación es tal vez el mas importante de nuestro asistente virtual, vamos a garantizar que complete el proceso. Para esto vamos a seleccionar la opción **Only digress from slots to nodes that allow returns**
 * Haz click en el botón **Apply**
+* Ahora vamos a especificar que nodos van a garantizar regresar a la conversación inicial una vez el usuario divague o cambie de tema. Para esto vamos a usar el nodo de **Chistes**, haz click en el botón **Customize** para este nodo.
+* Haz click en la pestaña **Digressions** del panel emergente
+* Haz click en la opción **Digressions can come into this node** 
+* Seleccionar la opción **Return after digression** para que este nodo regrese a la conversación original cuando venga de un cambio de tama.
+* Haz click en el botón **Apply**
+* Prueba esta nueva respuesta en el panel de pruebas con una frase como `quiero que me ayudes para que arreglen mi carro` y en medio de las preguntas que el asistente te hace como _¿Cuál es la marca del carro?_ pregunta por un chiste `cuentame un chiste` 
 
-#### 4.4. Multiples Respuestas
+> Digressions te permite cambiar de tema/conversación con flexibilidad desde un slot o un flujo conversacional. Esta funcionalidad nos permite hacer mas reales las capacidades conversacionales del asistente virtual, con conversaciones menos lineales y estructuradas. Para mayor informacíon puedes revisar la [documentación de Digressions](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions)
+
+#### 4.4. Nodos con Multiples Respuestas
 
 Habilita un nodo con varias respuestas para que tu asistente virtual pueda proporcionar respuestas diferentes a la misma entrada, en función de otras condiciones.
 
@@ -190,9 +199,17 @@ Habilita un nodo con varias respuestas para que tu asistente virtual pueda propo
 Continuaremos el desarrollo de nuestro arból conversacional, con los diferentes flujos de interacciones dentro de nuestro asistente virtual.
 
 * En el nodo **Presentar Reclamacion** haz click sobre el botón de los 3 puntos y haz click sobre la opción **Add child node**
-* Este nuevo nodo hijo será para la opcion en que el usuario acepta enviar la reclamación en este momento.
+* Este nuevo nodo hijo será para la opcion en que el usuario acepta enviar la reclamación en este momento. Llamaremos al nado **Si** y su condición sera reconocer la intención **Aceptar-Si**
+* Crea otro nodo hijo para **Presentar Reclamacion**. Esta vez llama al nodo hijo **No** y que reconozca la intención **Negar-No**
+* En el nodo **Si** agrega la respuesta `Por favor envíame una foto del daño`
+* En el nodo **Si** haz click sobre el botón de los 3 puntos y haz click sobre la opción **Add child node**
+* Este nuevo nodo hijo será para recibir la foto del daño, sin embargo la foto no la va a recibir realmente el servicio Watson Assitant, nuestra aplicación recibira la imagen y la evaluará usando el servicio Visual Recognition. A nuestro asistente virtual llegará una variable de contexto que llamaremos **$images**
+* Como nombre de este nuevo nodo usaremos **Imagen**, como condición **$images** y como respuesta usaremos el siguiente código
 
+```
+Imagen dectectada: <? $images.images.![classifiers.![classes.![class].join(', ')].join(', ')].join(', ')  ?>
+```
 
+> Watson Assistant permite usar código en sus respuesta o en el manejo de variables de contexto. Se utilizan los tags **<?** y **?>** para abrir y cerrar una inyección de codigo. Para mayor información puedes revisar la [documentación de los metodos de expresiones de lenguaje](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-methods)
 
-
-
+> Para mayor información acerca del [entendimiento del dialogo revisa la documentación](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-depiction)
