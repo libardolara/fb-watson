@@ -61,3 +61,5 @@ Para desplegar esta función puedes usar el toolchain haciendo click en el boton
 * Para revisar tu funcion puedes ir a https://console.bluemix.net/openwhisk/actions
 
 ![](docs/tc_pipeline_run.png)
+
+> Hemos terminado este ejercicio para crear nuestro asistente virtual de seguros, regresa al tutorial principal [Regresar](README.md#7-configurar-el-webhook-de-facebook-messenger)
