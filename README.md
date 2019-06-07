@@ -65,7 +65,7 @@ Crea un servicio de [Watson Assistant](https://cloud.ibm.com/catalog/services/wa
 * Haz click en el botón **Lanzar Herramienta** en la página principal del servicio.
 * Crea un nuevo Skill en el lenguaje preferido o importa el ejemplo en español [sample_workspace.json](sample_workspace.json) 
 
-> Para instrucciones detalladas en como desarrollar un asistente virtual sigue [El Instructivo para crear Skills](README_Skills.md)
+> Para instrucciones detalladas en como desarrollar un asistente virtual sigue [El Instructivo para desarrollar Asistentes Virtuales](README_Skills.md)
 
 * Después de importar y/o desarrollar el asistente, abre los detalles **View API Details** del Skill, copia el **Workspace ID** y pégala en el archivo `params.json` en el valor `wa_workspace_id`
 
