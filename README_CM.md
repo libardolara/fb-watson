@@ -36,3 +36,5 @@ Watson Visual Recognition permite crear modelos de clasificación de imagenes. E
 * Cuando el entrenamiento termine, ve a los detalles del modelo.
 * Copia el Model ID y pégalo en el archivo `params.json` en el valor `vr_model_id`
 * Puedes probar el modelo en la pestaña Test, arrastrando una nueva imagen para clasificar
+
+> Hemos terminado este ejercicio para crear nuestro asistente virtual de seguros, regresa al tutorial principal [Regresar](README.md#4-crear-el-servicio-cloudant-database)
