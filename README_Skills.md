@@ -299,4 +299,4 @@ Para finalizar vamos a mostrar como podemos reutilizar conversaciones o saltar d
 
 ![](docs/wa_full_jump.png)
 
-> Hemos terminado este ejercicio para crear nuestro asistente virtual de seguros, regresa al tutorial principal [Regresar](README.md)
+> Hemos terminado este ejercicio para crear nuestro asistente virtual de seguros, regresa al tutorial principal [Regresar](README.md#3-crear-el-servicio-watson-visual-recognition)
