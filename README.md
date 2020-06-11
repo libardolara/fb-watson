@@ -27,6 +27,7 @@ Después de terminar este pattern usted entenderá como:
 7. La función envía la respuesta a Facebook Messenger.
 8. El usuario obtiene la respuesta para su interacción.
 
+
 ## Componentes Incluidos
 
 * [Cloudant](https://cloud.ibm.com/catalog/services/cloudant): Una base de datos completamente manejada diseñada para aplicaciones web y mobile modernas que usan documentos como JSON.
@@ -44,6 +45,12 @@ Después de terminar este pattern usted entenderá como:
 * [IBM Cloud Functions CLI](https://cloud.ibm.com/openwhisk/learn/cli) para crear cloud functions desde la terminal. Haz una prueba de una acción `ibmcloud wsk action invoke /whisk.system/utils/echo -p message hello --result` para que tu `~/.wskprops` apunte a la cuenta correcta.
 
 * [Whisk Deploy _(wskdeploy)_](https://github.com/apache/incubator-openwhisk-wskdeploy) es una herramienta que ayuda a describir y desplegar cualquier componente de OpenWhisk usando un archivo Manifest escrito en YAML. Lo usuarás si deseas hacer el despliegue de todos los recursos de Cloud Functions en una sola línea de comandos. Puedes descargar en [releases page](https://github.com/apache/incubator-openwhisk-wskdeploy/releases) y seleccionar el archivo correcto para tu sistema operativo.
+
+# Ver los videos
+Aprende un poco mas acerca de los servicios de inteligencia artificial de Watson
+
+
+[![](https://img.youtube.com/vi/YDYpQJmGdpA/0.jpg)](https://www.youtube.com/watch?v=YDYpQJmGdpA&list=PLSMvxXwhRqaE8MQ7HICcC3rXAriNDsflg)
 
 ## Paso a Paso
 
